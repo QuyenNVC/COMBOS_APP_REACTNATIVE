@@ -43,6 +43,9 @@ export default StyleSheet.create({
     aspectRatio: 1,
     borderRadius: 20,
     backgroundColor: '#fff',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   infoIcon: {
     maxWidth: 50,

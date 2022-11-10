@@ -17,31 +17,31 @@ export const CarouselComponent = memo(({data, width, height, duration}) => {
 
   return (
     <Box marginTop={15} paddingX={15}>
-      <GestureHandlerRootView>
-        <Carousel
-          loop
-          width={width}
-          height={height}
-          autoPlay={true}
-          data={data}
-          scrollAnimationDuration={duration}
-          onProgressChange={(_, absoluteProgress) =>
-            (progressValue.value = absoluteProgress)
-          }
-          renderItem={({item, index}) => (
-            <TouchableOpacity
-              activeOpacity={1}
-              key={index}
-              style={[styles.backgroundImage, {height}]}>
-              <Image
-                source={item.src}
-                style={[styles.backgroundImage, {height}]}
-                resizeMode="stretch"
-              />
-            </TouchableOpacity>
-          )}
-        />
-      </GestureHandlerRootView>
+      {/* <GestureHandlerRootView> */}
+      <Carousel
+        loop
+        width={width}
+        height={height}
+        autoPlay={true}
+        data={data}
+        scrollAnimationDuration={duration}
+        onProgressChange={(_, absoluteProgress) =>
+          (progressValue.value = absoluteProgress)
+        }
+        renderItem={({item, index}) => (
+          <TouchableOpacity
+            activeOpacity={1}
+            key={index}
+            style={[styles.backgroundImage, {height}]}>
+            <Image
+              source={item.src}
+              style={[styles.backgroundImage, {height}]}
+              resizeMode="stretch"
+            />
+          </TouchableOpacity>
+        )}
+      />
+      {/* </GestureHandlerRootView> */}
       <HStack justifyContent="center" space={2} marginTop={15}>
         {data.map((item, index) => {
           return (

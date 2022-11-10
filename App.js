@@ -17,20 +17,17 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import {Provider} from 'react-redux';
+import {store} from './src/redux/configStore';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {NativeBaseProvider} from 'native-base';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {routes} from './src/utils/routes';
 
 import {Provider as PaperProvider} from 'react-native-paper';
+import AppBottomNavigator from './src/components/AppBottomNavigator/AppBottomNavigator';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
@@ -62,6 +59,12 @@ const Section = ({children, title}): Node => {
 
 const Stack = createNativeStackNavigator();
 
+const config = {
+  dependencies: {
+    'linear-gradient': require('react-native-linear-gradient').default,
+  },
+};
+
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -70,26 +73,29 @@ const App: () => Node = () => {
   };
 
   return (
-    <NativeBaseProvider>
-      <PaperProvider>
-        <StatusBar animated={true} />
-        <NavigationContainer>
-          <Stack.Navigator
-            screenOptions={{
-              headerShown: false,
-              gestureEnabled: true,
-              gestureDirection: 'horizontal',
-            }}>
-            {routes.map((item, index) => (
-              <Stack.Screen
-                key={index}
-                name={item.name}
-                component={item.component}></Stack.Screen>
-            ))}
-          </Stack.Navigator>
-        </NavigationContainer>
-      </PaperProvider>
-    </NativeBaseProvider>
+    <Provider store={store}>
+      <NativeBaseProvider config={config}>
+        <PaperProvider>
+          <StatusBar animated={true} />
+          <NavigationContainer>
+            <Stack.Navigator
+              screenOptions={{
+                headerShown: false,
+                gestureEnabled: true,
+                gestureDirection: 'horizontal',
+              }}>
+              {routes.map((item, index) => (
+                <Stack.Screen
+                  key={index}
+                  name={item.name}
+                  component={item.component}></Stack.Screen>
+              ))}
+            </Stack.Navigator>
+            {<AppBottomNavigator />}
+          </NavigationContainer>
+        </PaperProvider>
+      </NativeBaseProvider>
+    </Provider>
   );
 };
 

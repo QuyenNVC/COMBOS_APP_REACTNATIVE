@@ -7,17 +7,6 @@ const {getDefaultConfig} = require('metro-config');
  * @format
  */
 
-// module.exports = {
-//   transformer: {
-//     getTransformOptions: async () => ({
-//       transform: {
-//         experimentalImportSupport: false,
-//         inlineRequires: true,
-//       },
-//     }),
-//   },
-// };
-
 module.exports = (async () => {
   const {
     resolver: {sourceExts, assetExts},

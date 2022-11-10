@@ -3,4 +3,5 @@ export default images = {
   banner11: require('./images/banner11.png'),
   banner21: require('./images/banner21.png'),
   sale: require('./images/sale.png'),
+  googleMap: require('./images/google_map.png'),
 };
