@@ -145,7 +145,7 @@ const Detail = memo(({navigation}) => {
         />
         {/* </GestureHandlerRootView> */}
 
-        {/* INFOMATION */}
+        {/* GENERAL INFOMATION */}
         <HStack
           justifyContent="space-between"
           paddingBottom="6"
@@ -217,19 +217,9 @@ const Detail = memo(({navigation}) => {
           <TouchableRipple
             rippleColor="rgba(0,0,0,0.05)"
             borderless={true}
-            style={{
-              width: 35,
-              height: 35,
-              padding: 5,
-              borderRadius: 18,
-            }}
+            style={styles.nextButton}
             onPress={() => console.log(1)}>
-            <ARROW_RIGHT
-              style={{
-                maxWidth: 25,
-                maxHeight: 25,
-              }}
-            />
+            <ARROW_RIGHT style={styles.nextButtonIcon} />
           </TouchableRipple>
         </HStack>
         <VStack paddingY="4" space={2}>
@@ -250,7 +240,7 @@ const Detail = memo(({navigation}) => {
         </VStack>
       </Box>
 
-      {/* NHÚNG LINK GOOGLE MAP */}
+      {/* LINK TO GOOGLE MAP */}
       <Box>
         <ImageBackground
           source={assets.googleMap}
@@ -262,12 +252,7 @@ const Detail = memo(({navigation}) => {
             alignSelf: 'center',
           }}
         />
-        <View
-          style={{
-            paddingVertical: 20,
-            paddingHorizontal: 15,
-            backgroundColor: COLOR_PRIMARY,
-          }}>
+        <View style={styles.addressWrapper}>
           <Text fontFamily={FONT_FAMILY} fontSize="14">
             44-46 Phan Bội Châu, Ben Thanh Ward, Quận 1, TP. Hồ Chí Minh, Việt
             Nam - 0,2 km từ trung tâm.
@@ -405,12 +390,7 @@ const Detail = memo(({navigation}) => {
 
       {/* THÔNG TIN ĐI LẠI */}
       <Box style={styles.boxWrapper}>
-        <Box
-          style={{
-            paddingBottom: 25,
-            borderBottomColor: BORDER_COLOR_PRIMARY,
-            borderBottomWidth: 1,
-          }}>
+        <Box style={styles.titleWrapper}>
           <HStack justifyContent="space-between" alignItems="center">
             <Text bold fontFamily={FONT_FAMILY} fontSize="18">
               Thông tin đi lại*
@@ -438,22 +418,12 @@ const Detail = memo(({navigation}) => {
             </Text>
           </HStack>
         </Box>
-        <Box
-          style={{
-            paddingVertical: 15,
-            borderBottomColor: BORDER_COLOR_PRIMARY,
-            borderBottomWidth: 1,
-          }}>
+        <Box style={styles.titleWrapper2}>
           <HStack justifyContent="space-between" alignItems="center">
             <Text bold fontFamily={FONT_FAMILY} fontSize="18">
               Xung quanh chỗ nghỉ*
             </Text>
-            <MALL
-              style={{
-                maxWidth: 35,
-                maxHeight: 35,
-              }}
-            />
+            <MALL style={styles.mallIcon} />
           </HStack>
           <HStack justifyContent="space-between" space="5" marginTop={2}>
             <VStack space={1} flexShrink={1}>
@@ -469,10 +439,7 @@ const Detail = memo(({navigation}) => {
             </Text>
           </HStack>
         </Box>
-        <Box
-          style={{
-            paddingTop: 15,
-          }}>
+        <Box style={styles.noteWrapper}>
           <Text fontFamily={FONT_FAMILY} fontSize="15">
             * Tất cả khoảng cách được đo theo đường thẳng. Khoảng cách di chuyển
             thực sự có thể khác.
@@ -480,16 +447,10 @@ const Detail = memo(({navigation}) => {
         </Box>
       </Box>
 
-      {/* CHIA SẼ LIÊN KẾT */}
+      {/* SHARE LINK */}
       <VStack style={styles.boxWrapper} space={4}>
         <TouchableRipple
-          style={{
-            paddingHorizontal: 15,
-            paddingVertical: 19,
-            borderColor: 'rgba(7, 106, 208, 1)',
-            backgroundColor: '#fff',
-            borderWidth: 2,
-          }}
+          style={styles.buttonShareLink}
           onPress={() => console.log('Share')}
           rippleColor="rgba(7, 106, 208, 1)">
           <HStack justifyContent="space-around" alignItems="center" space="2">
@@ -505,13 +466,7 @@ const Detail = memo(({navigation}) => {
           </HStack>
         </TouchableRipple>
         <TouchableRipple
-          style={{
-            paddingHorizontal: 15,
-            paddingVertical: 19,
-            borderColor: 'rgba(7, 106, 208, 1)',
-            backgroundColor: '#fff',
-            borderWidth: 2,
-          }}
+          style={styles.buttonShareLink}
           onPress={() => console.log('Share')}
           rippleColor="rgba(7, 106, 208, 1)">
           <HStack justifyContent="space-around" alignItems="center" space="2">
@@ -527,13 +482,10 @@ const Detail = memo(({navigation}) => {
           </HStack>
         </TouchableRipple>
       </VStack>
+
+      {/* ORDER */}
       <TouchableRipple
-        style={{
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: 'rgba(7, 106, 208, 1)',
-          height: 80,
-        }}
+        style={styles.buttonOrder}
         onPress={() => console.log('Chọn phòng')}
         rippleColor="rgba(50, 150, 240, 1)">
         <Text bold color="#fff" fontFamily={FONT_FAMILY} fontSize="24">

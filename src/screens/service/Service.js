@@ -26,6 +26,7 @@ const Service = memo(({navigation}) => {
   const {categoryId} = route.params;
   const [showSorter, setShowSorter] = useState(false);
   const [showFilter, setShowFilter] = useState(false);
+  // FAKE DATA
   const services = [
     {
       id: 1,

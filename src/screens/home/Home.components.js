@@ -1,7 +1,7 @@
 import {Box, HStack} from 'native-base';
 import {memo} from 'react';
 import {Image, Pressable, TouchableOpacity, View} from 'react-native';
-import {GestureHandlerRootView} from 'react-native-gesture-handler';
+// import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import Animated, {
   Extrapolate,
   interpolate,
@@ -105,16 +105,7 @@ export const PaginationItem = props => {
           },
         ],
       }}>
-      <Animated.View
-        style={[
-          {
-            borderRadius: 50,
-            backgroundColor,
-            flex: 1,
-          },
-          animStyle,
-        ]}
-      />
+      <Animated.View style={[styles.paginationActivedItem, animStyle]} />
     </View>
   );
 };
