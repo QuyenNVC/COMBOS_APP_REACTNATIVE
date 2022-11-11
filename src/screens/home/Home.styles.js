@@ -13,7 +13,29 @@ export default StyleSheet.create({
   banner: {
     height: 250,
   },
-
+  headerTitleWrapper: {
+    paddingHorizontal: 15,
+    paddingVertical: 20,
+    justifyContent: 'space-between',
+  },
+  bellIcon: {
+    maxWidth: 30,
+    maxHeight: 30,
+  },
+  buttonProfile: {
+    backgroundColor: '#fff',
+    borderRadius: 18,
+    height: 35,
+  },
+  buttonProfileRipple: {
+    padding: 5,
+    borderRadius: 18,
+    height: 35,
+  },
+  buttonProfileIcon: {
+    maxWidth: 25,
+    maxHeight: 25,
+  },
   // Menu category
   product: {
     borderRadius: 20,
@@ -64,6 +86,12 @@ export default StyleSheet.create({
     borderRadius: 10,
     overflow: 'hidden',
   },
+  paginationActivedItem: {
+    borderRadius: 50,
+    backgroundColor: 'rgba(6, 82, 178, 1)',
+    flex: 1,
+  },
+
   // sale
   saleItem: {
     marginLeft: 15,

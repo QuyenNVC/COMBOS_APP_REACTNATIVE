@@ -73,48 +73,23 @@ export default memo(function ({navigation}) {
           resizeMode: 'cover',
           alignSelf: 'center',
         }}>
-        <HStack
-          style={{
-            paddingHorizontal: 15,
-            paddingVertical: 20,
-            // alignItems: 'center',
-            justifyContent: 'space-between',
-          }}>
+        <HStack style={styles.headerTitleWrapper}>
           <Text color="#fff" fontFamily={FONT_FAMILY} bold fontSize="20">
             combos.com.vn
           </Text>
           <HStack space={2}>
             <Pressable>
-              <BELL
-                style={{
-                  maxWidth: 30,
-                  maxHeight: 30,
-                }}
-              />
+              <BELL style={styles.bellIcon} />
             </Pressable>
-            <View
-              style={{
-                backgroundColor: '#fff',
-                borderRadius: 18,
-                height: 35,
-              }}>
+            <View style={styles.buttonProfile}>
               <TouchableRipple
-                style={{
-                  padding: 5,
-                  borderRadius: 18,
-                  height: 35,
-                }}
+                style={styles.buttonProfileRipple}
                 borderless={true}
                 rippleColor="rgba(204, 237, 252, 1)"
                 onPress={() => {
                   console.log('Profile');
                 }}>
-                <USER
-                  style={{
-                    maxWidth: 25,
-                    maxHeight: 25,
-                  }}
-                />
+                <USER style={styles.buttonProfileIcon} />
               </TouchableRipple>
             </View>
           </HStack>
